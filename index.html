@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta2/css/all.min.css"
+        integrity="sha512-YWzhKL2whUzgiheMoBFwW8CKV4qpHQAEuvilg9FAn5VJUDwKZZxkJNuGM4XkWuk94WCrrwslk8yWNGmY1EduTA=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+    <title>Snow J</title>
+</head>
+
+<body>
+
+    <header class="header">
+        <a href="#" class="brand">Travel</a>
+        <div class="menu-btn"></div>
+        <div class="nav">
+            <div class="nav-items">
+                <a href="#">Home</a>
+                <a href="#">About</a>
+                <a href="#">Gallery</a>
+                <a href="#">Contact</a>
+                <a href="#">Blogs</a>
+            </div>
+        </div>
+    </header>
+
+    <section class="home">
+        <video src="videos/beach.mp4" muted autoplay loop class="vid active"></video>
+        <video src="videos/car.mp4" muted autoplay loop class="vid"></video>
+        <video src="videos/road trip.mp4" muted autoplay loop class="vid"></video>
+        <video src="videos/travel.mp4" muted autoplay loop class="vid"></video>
+
+        <div class="content active">
+            <h2>Wonderfull Island</h2>
+            <h4>Explore the world</h4>
+            <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Eum rem quo quibusdam aliquid earum in
+                voluptatem fuga reiciendis natus sapiente dolorem, minus culpa, asperiores laudantium!</p>
+            <a href="" class="exp">Explore</a>
+        </div>
+        <div class="content">
+            <h2>Adventures Off Road</h2>
+            <h4>Explore the world</h4>
+            <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Eum rem quo quibusdam aliquid earum in
+                voluptatem fuga reiciendis natus sapiente dolorem, minus culpa, asperiores laudantium!</p>
+            <a href="" class="exp">Explore</a>
+        </div>
+        <div class="content">
+            <h2>Road Trip</h2>
+            <h4>Explore the world</h4>
+            <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Eum rem quo quibusdam aliquid earum in
+                voluptatem fuga reiciendis natus sapiente dolorem, minus culpa, asperiores laudantium!</p>
+            <a href="" class="exp">Explore</a>
+        </div>
+        <div class="content">
+            <h2>Enjoy Trekking</h2>
+            <h4>Explore the world</h4>
+            <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Eum rem quo quibusdam aliquid earum in
+                voluptatem fuga reiciendis natus sapiente dolorem, minus culpa, asperiores laudantium!</p>
+            <a href="" class="exp">Explore</a>
+        </div>
+
+        <div class="social">
+            <a href="#"><img src="https://i.ibb.co/x7P24fL/facebook.png"></a>
+            <a href="#"><img src="https://i.ibb.co/Wnxq2Nq/twitter.png"></a>
+            <a href="#"><img src="https://i.ibb.co/ySwtH4B/instagram.png"></a>
+        </div>
+
+    </section>
+    <div class="slider">
+        <div class="slideBtn active"></div>
+        <div class="slideBtn"></div>
+        <div class="slideBtn"></div>
+        <div class="slideBtn"></div>
+    </div>
+    <script>
+        //Javascript for active class
+
+        const menuBtn = document.querySelector(".menu-btn");
+        const nav = document.querySelector(".nav");
+        menuBtn.addEventListener('click', () => {
+            menuBtn.classList.toggle("active")
+            nav.classList.toggle("active")
+        })
+
+        //Javascript for video source
+
+        const btns = document.querySelectorAll(".slideBtn");
+        const slides = document.querySelectorAll(".vid");
+        const contents = document.querySelectorAll(".content");
+
+        var sliderNav = function (m) {
+            btns.forEach((btn) => {
+                btn.classList.remove("active");
+            });
+
+            slides.forEach((s) => {
+                s.classList.remove("active");
+            });
+
+            contents.forEach((c) => {
+                c.classList.remove("active");
+            });
+
+            btns[m].classList.add("active");
+            slides[m].classList.add("active");
+            contents[m].classList.add("active");
+        }
+
+        btns.forEach((btn, i) => {
+            btn.addEventListener('click', () => {
+                sliderNav(i);
+            });
+        });
+
+
+    </script>
+</body>
+
+</html>
